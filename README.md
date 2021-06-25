@@ -23,3 +23,13 @@ yfinance 0.1.59 <br />
 PHP 8.0.7 <br />
 PHP-mongodb driver 1.9.1 <br />
 
+<h2>Flow Chart</h2>
+<h3>
+  1. yfinance(yahoo finance 데이터 수집 모듈)을 통하여 주식 데이터를 받아와 DataFrame 형태로 저장
+  2. 저장된 DF를 MongoDB에 저장
+  3. MongoDB에 저장된 데이터를 가져와 train_csv, test_csv로 분리하여 저장
+  4. 저장된 csv파일들을 통하여 LSTM모델에 학습 과 예측을 진행
+  5. 예측된 데이터를 MongoDB에 {stock}_PRED collections에 저장
+  6. PHP로 구성을 하여 저장된 {stock}_PRED를 chart화
+  
+</h3>
